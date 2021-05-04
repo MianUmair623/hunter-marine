@@ -1,0 +1,75 @@
+#company-history {
+  position: relative;
+  overflow: hidden;
+  i {
+    position: absolute;
+    top: 50%;
+    font-size: 60px;
+    margin-top: -75px;
+    color: #fff;
+    z-index: 5;
+    padding: 45px;
+    cursor: pointer;
+  }
+  .arrow-left {
+    left: -10px;
+    padding-left: 20px;
+  }
+  .arrow-right {
+    right: -10px;
+    padding-right: 20px;
+  }
+  .content {
+    height: 220px;
+    padding: 0 34px;
+  }
+
+  .pagination {
+    padding: 40px 5px 0;
+    span {
+      margin: 0 11px;
+      padding-bottom: 5px;
+      border-bottom: 3px solid $primary;
+      &.swiper-active-switch {
+        border-color: #fff;
+      }
+    }
+  }
+
+}
+
+.news {
+  margin-bottom: 65px;
+}
+
+.useful-link {
+  display: block;
+  margin-bottom: 30px;
+}
+  .useful-link > div {
+    padding: 15px 0;
+  }
+  .useful-link img {
+    padding: 20px 0;
+  }
+
+.assets {
+  h3 {
+    margin: 20px 0 12px;
+  }
+  p {
+    font-size: .9em;
+    margin-bottom: 8px;
+    color: $gray;
+  }
+  a {
+    margin-top: 30px;
+  }
+}
+
+body.about.river {
+  p a {
+    color: #fff !important;
+    text-decoration: underline;
+  }
+}

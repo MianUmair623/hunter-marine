@@ -1,0 +1,44 @@
+- content_for :title, 'Tank Barges - Equipment Register'
+- content_for :description, 'Year Built, Builder, and Notes on each Hines Furlong Line barge.'
+
+.hero-wrapper
+  .hero-image{ style: "background-image: url(#{asset_path('barge-nashville.jpg')})"}
+
+.bg-white.section
+  .container-fluid{ style:'max-width: none'}
+    .max-1200.center-block
+      .row.text-center
+        .col-xs-12
+          %h3
+            %span Tank Barges
+            .h1 Equipment Register
+
+      .row.large-gutter
+        .col-xs-12.service
+          .boat_positions
+            - if @strappings.empty?
+              %h3.text-center No Barges Available
+            - else
+              %table.text-center.footable.table.strapping-table
+                %thead.bg-primary
+                  %tr
+                    %th Barge Number  
+                    %th Year Built  
+                    %th Shipyard
+                    %th{ data: { hide: 'phone,tablet'}} Strappings File
+                    %th{ data: { hide: 'phone,tablet'}} Notes
+                %tbody
+                  - @strappings.each do |barge|
+                    %tr{ class: cycle('odd', 'even')}
+                      %td= barge.barge_number
+                      %td= barge.year_built
+                      %td= barge.shipyard
+                      %td.pdf-link
+                        - if barge.strappings.present?
+                          = link_to embedded_svg('icon-download.svg', class: 'download-icon'), barge.strappings.url, target: :_blank, download: ''
+                      %td= barge.notes
+          %br
+          %p 
+            * These barges are operating under other customer selected numbers
+            %br
+            ** Some customer numbered barges may not appear on the Equipment Register

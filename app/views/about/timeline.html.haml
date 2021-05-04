@@ -1,0 +1,35 @@
+- content_for :title, 'Hunter Marine Transport'
+- content_for :description, 'Hunter Marine sold its inland marine transportation operation to Hines Furlong Line in early 2018.'
+
+#company-history.bg-primary.text-center.section
+
+  %h2.h3
+    %span Hunter Marine Transport
+    .h1.white History
+
+
+  %i.arrow-left.fa.fa-angle-left.noselect
+  %i.arrow-right.fa.fa-angle-right.noselect
+
+
+  .swiper-container
+    .swiper-wrapper
+      -@milestones.each do |(year,fact)|
+        .swiper-slide
+          .max-850.center-block.text-center
+            .vert-center
+              .content
+                %table
+                  %tr
+                    %td
+                      - if year == '2017'
+                        .pull-left= image_tag 'ron hunter.jpg', style: 'max-width:260px; margin-right:20px;'
+                    %td
+                      %p.h3.alt.white
+                        #{year}:
+                        = fact
+
+  .pagination
+    -@milestones.each do |(year)|
+      %span.swiper-pagination-switch
+        = year

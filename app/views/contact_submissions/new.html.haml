@@ -1,0 +1,118 @@
+- content_for :title, 'Contact - Nashville River Transportaion'
+- content_for :description, 'Contact Hines Furlong Line for rate requests, vessel operations, and fleeting information.'
+
+.bg-white.section
+  .container-fluid
+    .max-1030.center-block
+      .row.text-center
+        .col-xs-12
+          %h3
+            .h1 Contact US
+
+#checker
+  .row.no-gutter
+    .col-sm-6.bg-white
+      .content.bg-white
+        .max-300.center-block
+          %h3.h4 Nashville, TN
+          %h4.alt Corporate Office
+          %br
+          %address.small
+            = link_to "615-352-6935", "615-352-6935"
+            %br
+            4015 Hillsboro Pike
+            %br
+            Suite 202
+            %br
+            Nashville, TN 37215
+
+          %br
+          %br
+          %h3.h4 Paducah, KY
+          %h4.alt KY Vessel Operations Office
+          %h5.alt Vessel Operations, HR, Purchasing
+          %address.small
+            = link_to "270-444-7011", "270-444-7011"
+            %br
+            3501 Starlite Drive, Paducah, KY 42003
+            %br
+            P.O. Box 3490 Paducah, KY 42002
+
+
+    .col-sm-6.bg-primary
+      .content.bg-primary
+        .row.text-center
+          .col-xs-12
+            %br
+            %h1.h2.white
+              %span.white Select a Service below for a
+              .h1.white Rate Request
+
+        .max-300.center-block
+          .row
+            .col-xs-12
+              = mail_to "info@hfline.com", "Boat/Barge Charters", subject: "Rate Request - Charters", class: 'button'
+            .col-xs-12
+              = mail_to "Traffic@Hfline.com", "Towing", subject: "Rate Request - Transportation", class: 'button'
+
+.bg-gray.section#contact-heading
+  .container-fluid
+    .row.text-center
+      .col-xs-12
+        %h2.h3
+          .h1 Directory
+      .col-xs-12
+        .directory
+          %table.text-center.footable.table
+            %thead.bg-primary
+              %tr
+                %th Name
+                %th Title
+                %th{ data: { hide: 'phone,tablet'}} Office/Direct #
+                %th{ data: { hide: 'phone,tablet'}} Email
+            %tbody
+              - @contacts.each do |contact|
+                %tr{ class: cycle('odd', 'even')}
+                  %td= contact.name
+                  %td= contact.title
+                  - tel = contact.phone.gsub(/[-,. ()]/,'')
+                  %td= link_to contact.phone, "tel:#{tel}"
+                  %td= mail_to contact.email, contact.email
+
+
+
+      -#= form_for @contact_submission, url:{ action:'create', anchor: 'contact-heading'}, html: { class: :row} do |f|
+        - if flash[:message].present?
+          %p.alert.alert-success.form-feedback= flash[:message]
+
+        - if f.object.errors.any?
+          #error_explanation.form-feedback
+            .alert.alert-error
+              The form contains #{pluralize(f.object.errors.count, "error")}.
+              %ul
+                - f.object.errors.full_messages.each do |msg|
+                  %li= msg
+        .col-sm-6
+          = f.select :location, options_for_select(HunterMarine::Application.config.contact_locations.keys, @contact_submission.location), {include_blank: "Choose a Location:"}, {required: true}
+          = f.text_field :subject, placeholder: 'Subject:'
+          = f.text_field :name, placeholder: 'Your Name:', required: true
+          = f.email_field :email, placeholder: 'Your Email:', required: true
+        .col-sm-6
+          = f.text_area :message, placeholder: 'Your Message:', required: true
+          = recaptcha_tags display: { theme: 'clean' }
+          %br
+        .col-xs-12
+          %button.max-275.center-block{ :type => 'submit' } Submit
+
+.bg-neutral-dark.text-center.section
+  .container-fluid
+    .max-760.center-block
+      .row
+        .col-xs-12
+          %h3
+            %span.white Employment Application
+            .h1 Online
+      .row
+        %p Hines Furlong Line supports the United States Coast Guard in mandating zero tolerance of illegal drugs and alcohol. We are committed to everyone's welfare and feel this program is necessary to assure the safety and welfare of all our employees.
+        %br
+        = link_to "APPLY ONLINE", "https://docs.google.com/forms/d/1XgTyMkm2Wr1-rHOw3lCu40UdYrMwKt4Xr5HGQebqVVc/viewform", target: :_blank, :class => 'button max-275 center-block'

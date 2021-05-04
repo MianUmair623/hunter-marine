@@ -1,0 +1,96 @@
+#home-slideshow {
+  position: relative;
+  overflow: hidden;
+  h1 {
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    font-size: 80px;
+    margin-top: -95px;
+    color: #fff;
+    z-index: 2;
+    padding: 45px;
+    cursor: pointer;
+    @media (min-width: 0px) and (max-width: 767px) {
+      font-size: 40px;
+      margin-top: -65px;
+      @include opacity(.25);
+    }
+  }
+  .arrow-left {
+    left: -10px;
+     @media (max-width: 767px) {
+      left: -42px;
+    }
+  }
+  .arrow-right {
+    right: -10px;
+    @media (max-width: 767px) {
+      right: -42px;
+    }
+  }
+  .pagination {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    z-index: 3;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .swiper-slide {
+    position: relative;
+  }
+  .slide-text {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  h2 {
+    color: #fff;
+  }
+}
+
+#checker {
+  background-color: $primary;
+
+  .content {
+    padding: 60px;
+    position: relative; 
+    margin-bottom: 45px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+      padding: 60px 15px;
+    }
+  }
+  .button {
+    margin-top: 80px;
+    @media (max-width: 767px) {
+      margin-top: 20px; 
+    }
+  }
+}
+
+.pages.index #checker .content {
+  margin-bottom: 0;
+}
+
+
+.pos-abs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  @media (max-width: 767px) {
+    position: relative;
+    height: auto;
+  }
+}
+

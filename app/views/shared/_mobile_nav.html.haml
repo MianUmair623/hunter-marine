@@ -1,0 +1,25 @@
+#mobile-nav.inactive.hidden
+  = link_to root_path do
+    = image_tag "hfl_logo_mobile_white.png", class: 'pull-left', style:'max-width:70px'
+  %ul
+    %li= active_link_to "About Us", about_path
+    %li
+      = link_to "Resources", 'javascript:;', style: 'cursor:default;'
+      %ul.list-unstyled
+        = active_link_to "Tank Barges & Fleet", '/tank-barges', wrap_tag: 'li'
+        = active_link_to "Careers", careers_path, wrap_tag: 'li'
+        = active_link_to "Boat Positions", '/boat-positions', wrap_tag: 'li'
+        = active_link_to "Media Assets & Helpful Links", '/media-assets', wrap_tag: 'li'
+        = link_to "Employee Resources", 'javascript:;', style: 'cursor:default; font-size:18px; color:#fff; margin-top: 5px;'
+        = active_link_to "Opportunities for Improvement", 'https://docs.google.com/forms/d/e/1FAIpQLSduDGi2xyJbWyRl2HyJBbe6P9N67Alr1jb_szIi2QZGdYIpqQ/viewform', wrap_tag: 'li'
+    %li
+      = link_to "Our Services", 'javascript:;', style: 'cursor:default;'
+      %ul.list-unstyled
+        = active_link_to "Towing & Fleeting", '/towing-fleeting', wrap_tag: 'li'
+        = active_link_to "Vessel Leasing", '/vessel-leasing', wrap_tag: 'li'
+    %li= link_to "Contact Us", contact_path
+    %li= link_to "Store", 'https://hinesfurlongline.myshopify.com'
+    %li
+      = link_to "tel:615-352-6935" do
+        = fa_icon "phone"
+        615-352-6935

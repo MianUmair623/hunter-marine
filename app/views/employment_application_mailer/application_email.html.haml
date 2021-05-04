@@ -1,0 +1,36 @@
+%p New application receive from the Hines Furlong Line website for the position of: #{@application.position}
+
+%p
+  %strong Application Details
+  %br
+  First Name: #{@application.first_name}
+  %br
+  Middle Name: #{@application.middle_name}
+  %br
+  Last Name: #{@application.last_name}
+
+  %br
+  %br
+
+  Current Address: #{@application.current_address}
+  %br
+  Apt Number: #{@application.apt_number}
+  %br
+  City: #{@application.city}
+  %br
+  State: #{@application.state}
+  %br
+  Zip: #{@application.zip}
+
+  %br
+  %br
+
+  Home Phone: #{@application.home_phone}
+  %br
+  Cell Phone: #{@application.cell_phone}
+  %br
+  Email: #{@application.email}
+
+%p
+  To view this application in more details visit:
+  = link_to "http://www.hinesfurlongline.com//admin/employment_applications/#{@application.id}", "http://www.hinesfurlongline.com//admin/employment_applications/#{@application.id}"

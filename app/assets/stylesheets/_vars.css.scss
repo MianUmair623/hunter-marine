@@ -1,0 +1,64 @@
+@function set-text-color($color) {
+  @if (lightness($color) > 65) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Colors
+$primary: #7c2529; /* old red #eb1e23;*/
+$primary_dark: darken($primary, 20%);
+$primary_light: lighten($primary, 20%);
+
+$secondary: #000;
+$secondary_dark: darken($secondary, 20%);
+$secondary_light: lighten($secondary, 20%);
+
+$tertiary: #464646;
+$tertiary_dark: darken($tertiary, 20%);
+$tertiary_light: lighten($tertiary, 20%);
+
+$neutral: #cccccc;
+$neutral_dark: #464646;
+$neutral_light: #f0f0f0;
+
+// Text
+$text_primary: $neutral_dark;
+$text_secondary: $neutral;
+$text_tertiary: $neutral_light;
+
+$font-size-base:          19px;
+
+// Forms
+$form_input_height: 60px;
+$form_button_line_height: 58px;
+$form_input_margin: 20px;
+$form_input_background: transparent;
+$form_input_color: $neutral_dark;
+$form_input_border_color: $neutral;
+$form_input_border_width: 1px;
+$placeholder: $form_input_color;
+$button_color: #fff;
+$button_bg_color: $primary;
+$button_bg_hover_color: $primary;
+$form_input_indent: 10px;
+
+
+// Alerts
+$alert-padding: 15px;
+$alert-border-radius: 0;
+$alert-link-font-weight: bold;
+$alert-success-bg: $primary_light;
+$alert-success-text: set-text-color($primary_light);
+$alert-success-border: $primary_light;
+$alert-info-bg: $secondary_light;
+$alert-info-text: set-text-color($secondary_light);
+$alert-info-border: $secondary_light;
+$alert-warning-bg: $secondary;
+$alert-warning-text: set-text-color($secondary);
+$alert-warning-border: $secondary;
+$alert-danger-bg: $primary;
+$alert-danger-text: set-text-color($primary);
+$alert-danger-border: $primary;
+

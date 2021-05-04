@@ -1,0 +1,20 @@
+.row.small-gutter
+  .col-xs-12
+    %h2.h3.text-center
+      %span Step 4
+      .h1 References
+#employment_references
+  .records
+    = f.fields_for :employment_references do |ff|
+      .reference-record
+        = render 'employment_reference_fields', :f => ff
+        %hr
+  .row.small-gutter
+    .col-xs-12
+      = image_tag 'plus-circle.png', id: 'add-reference-record', class: 'center-block block add-another'
+      %br
+  #app-prev-next.row
+    .col-xs-12
+      = link_to 'Back to Step 4', step_employment_applications_path('employment'), class: 'button reverse'
+    .col-xs-12
+      = f.submit 'Next to Step 5', class: 'filled-in'

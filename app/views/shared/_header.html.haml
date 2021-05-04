@@ -1,0 +1,39 @@
+%header
+  .container-fluid
+    .row.no-gutter
+      .col-sm-3.col-md-5.col-lg-5.vert-center
+        .content
+          = link_to root_path do
+            = image_tag "hfl_notext.jpg", class: 'logo'
+      .col-sm-9.col-md-7.col-lg-7.text-right.hidden-xs
+        #nav.row.no-gutter.text-center
+          .col-sm-2
+          .col-sm-2.vert-center
+            .content= active_link_to "About Us", about_path
+          .col-sm-2.vert-center.hover
+            .content
+              = link_to "Resources", 'javascript:;', style: 'cursor:default;'
+              .hover-show
+                %ul.list-unstyled.bg-ccc
+                  = active_link_to "Tank Barges & Fleet", '/tank-barges', wrap_tag: 'li'
+                  = active_link_to "Careers", careers_path, wrap_tag: 'li'
+                  = active_link_to "Boat Positions", '/boat-positions', wrap_tag: 'li'
+                  = active_link_to "Media Assets <br/>& Helpful Links".html_safe, '/media-assets', wrap_tag: 'li'
+
+                  .hover-2
+                    %li.no-border
+                      = link_to "Employee Resources", "javascript:;"
+                      .hover-show-2
+                        %ul.list-unstyled.bg-ccc
+                          = active_link_to "Opportunities for Improvement", 'https://docs.google.com/forms/d/e/1FAIpQLSduDGi2xyJbWyRl2HyJBbe6P9N67Alr1jb_szIi2QZGdYIpqQ/viewform', target: :_blank, wrap_tag: 'li'
+          .col-sm-2.vert-center.hover
+            .content
+              = link_to "Services", 'javascript:;', style: 'cursor:default;'
+              .hover-show
+                %ul.list-unstyled.bg-ccc
+                  = active_link_to "Towing & Fleeting", '/towing-fleeting', wrap_tag: 'li'
+                  = active_link_to "Vessel Leasing", '/vessel-leasing', wrap_tag: 'li'
+          .col-sm-2.vert-center
+            .content= active_link_to "Contact Us", contact_path
+          .col-sm-2.vert-center
+            .content= active_link_to "Store", 'https://hinesfurlongline.myshopify.com'

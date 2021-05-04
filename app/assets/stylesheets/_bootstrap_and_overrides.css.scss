@@ -1,0 +1,450 @@
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+@import "bootstrap/glyphicons";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/grid";
+
+@import "bootstrap/close";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+.container-fluid {
+  max-width: 1160px;
+}
+
+.row > a {
+  display: block;
+}
+
+.img-responsive {
+  width: 100%;
+}
+.max-p-100 {
+  max-width: 100%;
+}
+
+// Custom Max Width Classes
+$i: 5;
+@while $i < 1600 {
+  .max-#{$i} {
+    max-width: #{$i}px;
+  }
+  $i: $i + 5;
+}
+
+// Alternate Row Classes
+.row.large-gutter {
+  margin-left: 15px; margin-right: 15px;
+  @media (max-width: 767px) {
+    margin-left: -15px; margin-right: -15px;
+  }
+  > * {
+    padding-left: 15px; padding-right: 15px;
+  }
+}
+
+.row.small-gutter {
+  margin-left: -4px; margin-right: -4px;
+   > * {
+    padding-left: 4px; padding-right: 4px;
+  }
+}
+
+.row.no-gutter {
+  margin-left: 0; margin-right: 0;
+   > * {
+    padding-left: 0; padding-right: 0;
+  }
+}
+
+
+// Screen width based custom classes
+@media (max-width: 767px) {
+  .col-xs-text-left {
+    text-align: left;
+  }
+  .col-xs-text-right {
+    text-align: right;
+  }
+  .col-xs-text-center {
+    text-align: center;
+  }
+  .col-xs-pull-left {
+    float: left;
+  }
+  .col-xs-pull-right {
+    float: right;
+  }
+  .col-xs-clear-float {
+    float: none !important;
+    clear: both !important;
+  }
+  .col-xs-clear-left {
+    clear: left !important;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  .col-xs-pull-left {
+    float: left;
+  }
+  .col-xs-pull-right {
+    float: left;
+  }
+  .col-xs-clear-left {
+    clear: left;
+  }
+  .col-xs-clear-both {
+    clear: both;
+  }
+  .col-xs-clear-right {
+    clear: right;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .col-sm-text-left {
+    text-align: left;
+  }
+  .col-sm-text-right {
+    text-align: right;
+  }
+  .col-sm-text-center {
+    text-align: center;
+  }
+  .col-sm-pull-left {
+    float: left;
+  }
+  .col-sm-pull-right {
+    float: left;
+  }
+  .col-sm-clear-left {
+    clear: left;
+  }
+  .col-sm-clear-both {
+    clear: both;
+  }
+  .col-sm-clear-right {
+    clear: right;
+  }
+}
+
+@media (max-width: 1199px) {
+  .col-md-text-left {
+    text-align: left;
+  }
+  .col-md-text-right {
+    text-align: right;
+  }
+  .col-md-text-center {
+    text-align: center;
+  }
+  .col-md-pull-left {
+    float: left;
+  }
+  .col-md-pull-right {
+    float: left;
+  }
+  .col-md-clear-left {
+    clear: left;
+  }
+  .col-md-clear-both {
+    clear: both;
+  }
+  .col-md-clear-right {
+    clear: right;
+  }
+}
+
+@media (max-width: 1599px) {
+  .col-lg-text-left {
+    text-align: left;
+  }
+  .col-lg-text-right {
+    text-align: right;
+  }
+  .col-lg-text-center {
+    text-align: center;
+  }
+  .col-lg-pull-left {
+    float: left;
+  }
+  .col-lg-pull-right {
+    float: left;
+  }
+  .col-lg-clear-left {
+    clear: left;
+  }
+  .col-lg-clear-both {
+    clear: both;
+  }
+  .col-lg-clear-right {
+    clear: right;
+  }
+}
+
+
+
+.col-xs-p20,
+.col-sm-p20,
+.col-md-p20,
+.col-lg-p20 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-xs-p20 {
+  width: 20%;
+  float: left;
+}
+@media (min-width: 768px) {
+  .col-sm-p20 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-p20 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-p20 {
+    width: 20%;
+    float: left;
+  }
+}
+@media (min-width: 1400px) {
+  .col-xl-p20 {
+    width: 20%;
+    float: left;
+  }
+}
+
+
+//
+// Grid system for Bootstrap Grid XL
+// --------------------------------------------------
+// Styles for extra large grid columns
+.col-xl-1,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12 {
+  position: relative;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left: ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
+}
+// Extend large grid to float `.col-lg-12`, since it is no longer full-width
+@media (min-width: $screen-lg-desktop) {
+  .col-lg-12 {
+    float: left;
+  }
+}
+//
+// Variables for Bootstrap Grid XL
+// --------------------------------------------------
+// COMPONENT VARIABLES
+// --------------------------------------------------
+// Media queries breakpoints
+// --------------------------------------------------
+// Large screen / wide desktop
+$screen-xl:1600px !default;
+ $screen-xl-desktop:$screen-xl !default;
+// So media queries don't overlap when required, provide a maximum
+$screen-lg-max:($screen-xl - 1) !default;
+// Container sizes
+// --------------------------------------------------
+// Extra large grid
+//
+// Columns, offsets, pushes, and pulls for the extra large desktop device range.
+//
+// Note that `.col-xl-12` doesn't get floated on purpose—there's no need since
+// it's full-width.
+@media (min-width: $screen-xl-desktop) {
+  .col-xl-1,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-10,
+  .col-xl-11 {
+    float: left;
+  }
+  .col-xl-1 {
+    width: percentage((1 / $grid-columns));
+  }
+  .col-xl-2 {
+    width: percentage((2 / $grid-columns));
+  }
+  .col-xl-3 {
+    width: percentage((3 / $grid-columns));
+  }
+  .col-xl-4 {
+    width: percentage((4 / $grid-columns));
+  }
+  .col-xl-5 {
+    width: percentage((5 / $grid-columns));
+  }
+  .col-xl-6 {
+    width: percentage((6 / $grid-columns));
+  }
+  .col-xl-7 {
+    width: percentage((7 / $grid-columns));
+  }
+  .col-xl-8 {
+    width: percentage((8 / $grid-columns));
+  }
+  .col-xl-9 {
+    width: percentage((9 / $grid-columns));
+  }
+  .col-xl-10 {
+    width: percentage((10/ $grid-columns));
+  }
+  .col-xl-11 {
+    width: percentage((11/ $grid-columns));
+  }
+  .col-xl-12 {
+    width: 100%;
+  }
+  // Push and pull columns for source order changes
+  .col-xl-push-0 {
+    left: auto;
+  }
+  .col-xl-push-1 {
+    left: percentage((1 / $grid-columns));
+  }
+  .col-xl-push-2 {
+    left: percentage((2 / $grid-columns));
+  }
+  .col-xl-push-3 {
+    left: percentage((3 / $grid-columns));
+  }
+  .col-xl-push-4 {
+    left: percentage((4 / $grid-columns));
+  }
+  .col-xl-push-5 {
+    left: percentage((5 / $grid-columns));
+  }
+  .col-xl-push-6 {
+    left: percentage((6 / $grid-columns));
+  }
+  .col-xl-push-7 {
+    left: percentage((7 / $grid-columns));
+  }
+  .col-xl-push-8 {
+    left: percentage((8 / $grid-columns));
+  }
+  .col-xl-push-9 {
+    left: percentage((9 / $grid-columns));
+  }
+  .col-xl-push-10 {
+    left: percentage((10/ $grid-columns));
+  }
+  .col-xl-push-11 {
+    left: percentage((11/ $grid-columns));
+  }
+  .col-xl-pull-0 {
+    right: auto;
+  }
+  .col-xl-pull-1 {
+    right: percentage((1 / $grid-columns));
+  }
+  .col-xl-pull-2 {
+    right: percentage((2 / $grid-columns));
+  }
+  .col-xl-pull-3 {
+    right: percentage((3 / $grid-columns));
+  }
+  .col-xl-pull-4 {
+    right: percentage((4 / $grid-columns));
+  }
+  .col-xl-pull-5 {
+    right: percentage((5 / $grid-columns));
+  }
+  .col-xl-pull-6 {
+    right: percentage((6 / $grid-columns));
+  }
+  .col-xl-pull-7 {
+    right: percentage((7 / $grid-columns));
+  }
+  .col-xl-pull-8 {
+    right: percentage((8 / $grid-columns));
+  }
+  .col-xl-pull-9 {
+    right: percentage((9 / $grid-columns));
+  }
+  .col-xl-pull-10 {
+    right: percentage((10/ $grid-columns));
+  }
+  .col-xl-pull-11 {
+    right: percentage((11/ $grid-columns));
+  }
+  // Offsets
+  .col-xl-offset-0 {
+    margin-left: 0;
+  }
+  .col-xl-offset-1 {
+    margin-left: percentage((1 / $grid-columns));
+  }
+  .col-xl-offset-2 {
+    margin-left: percentage((2 / $grid-columns));
+  }
+  .col-xl-offset-3 {
+    margin-left: percentage((3 / $grid-columns));
+  }
+  .col-xl-offset-4 {
+    margin-left: percentage((4 / $grid-columns));
+  }
+  .col-xl-offset-5 {
+    margin-left: percentage((5 / $grid-columns));
+  }
+  .col-xl-offset-6 {
+    margin-left: percentage((6 / $grid-columns));
+  }
+  .col-xl-offset-7 {
+    margin-left: percentage((7 / $grid-columns));
+  }
+  .col-xl-offset-8 {
+    margin-left: percentage((8 / $grid-columns));
+  }
+  .col-xl-offset-9 {
+    margin-left: percentage((9 / $grid-columns));
+  }
+  .col-xl-offset-10 {
+    margin-left: percentage((10/ $grid-columns));
+  }
+  .col-xl-offset-11 {
+    margin-left: percentage((11/ $grid-columns));
+  }
+}
+
+
+

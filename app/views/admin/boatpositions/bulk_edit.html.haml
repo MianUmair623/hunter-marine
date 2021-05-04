@@ -1,0 +1,31 @@
+%h1 Bulk Edit Boat Positions
+
+= form_tag(bulk_update_admin_boatpositions_path, method: :put) do
+  %table.index_table
+    %tr
+      %th Name
+      %th Mile Marker
+      %th Direction
+      %th River
+      %th Delay
+      %th Turn
+      %th Charter
+    - collection.each do |boat_position|
+      %tr
+        %td
+          = hidden_field_tag("boat_positions[#{boat_position.id}][id]", boat_position.id)
+          = text_field_tag("boat_positions[#{boat_position.id}][boatname]", boat_position.boatname)
+        %td
+          = text_field_tag("boat_positions[#{boat_position.id}][mile_marker]", boat_position.mile_marker)
+        %td
+          = text_field_tag("boat_positions[#{boat_position.id}][direction]", boat_position.direction)
+        %td
+          = text_field_tag("boat_positions[#{boat_position.id}][river]", boat_position.river)
+        %td
+          = text_field_tag("boat_positions[#{boat_position.id}][delay]", boat_position.delay)
+        %td
+          = text_field_tag("boat_positions[#{boat_position.id}][turn]", boat_position.turn)
+        %td
+          = text_field_tag("boat_positions[#{boat_position.id}][charter]", boat_position.charter)
+  = submit_tag
+

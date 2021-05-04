@@ -1,0 +1,30 @@
+- content_for :title, 'HFL Fleet - Careers - Boat Positions'
+- content_for :description, 'Track your barge, apply for employment, and learn more about Hines Furlong Line.'
+
+.bg-white.section
+  .container-fluid
+    .max-1030.center-block
+      .row.text-center
+        .col-xs-12
+          %h3
+            %span Hines Furlong Line
+            .h1 RESOURCES
+
+      .row.large-gutter
+        .col-xs-12.service
+          = image_tag 'towing-fleeting.jpg', class: 'img-responsive', style: 'max-width: 470px; margin:0 auto;'
+          %br
+          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .row
+        %br
+        %table.blocks
+          %tr
+            %td.light-gray{ width:'40%', data:{link: '/tank-barges'}}
+              .h1 Tank Barges & Fleet
+            %td.red{ width:'60%', colspan:'2', data:{link: '/careers'}}
+              .h1 Careers
+          %tr
+            %td.gray{ width:'60%', colspan:'2', data:{link: ''}}
+              .h1 Boat Positions
+            %td.light-gray{ width:'40%', data:{link: '/media-assets'}}
+              .h1 Media Assets & Helpful Links

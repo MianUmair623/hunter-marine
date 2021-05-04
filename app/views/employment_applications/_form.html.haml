@@ -1,0 +1,301 @@
+
+#content
+  .max-720.center-block
+    = render :partial => 'shared/form_nav'
+
+  .max-400.center-block
+    - if flash[:error]
+      %p= flash[:error]
+
+    = form_for application do |f|
+      - if f.object.errors.any?
+        #error_explanation
+          .alert.alert-error
+            The form contains #{pluralize(f.object.errors.count, "error")}.
+          %ul
+            - f.object.errors.full_messages.each do |msg|
+              %li
+                * #{msg}
+
+      .container-fluid
+        .row.small-gutter
+          .col-xs-12
+            %h2.h3
+              %span Hines Furlong Line
+              .h1 Employment Application
+              
+            %p Hines Furlong Line supports the United States Coast Guard in mandating zero tolerance of illegal drugs and alcohol. We are committed to everyone's welfare and feel this program is necessary to assure the safety and welfare of all our employees.
+        
+        .row.small-gutter
+          .col-xs-12
+            %h2.h3
+              %span Step 1
+              .h1 Personal Information
+
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :position, :label => false, :placeholder => 'list positions applying for'
+
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :first_name, :class => 'checkinput', :label => false, :placeholder => 'first name'
+          .col-xs-12
+            = f.text_field :middle_name, :class => 'checkinput', :label => false, :placeholder => 'middle name'
+          .col-xs-12
+            = f.text_field :last_name, :class => 'checkinput', :label => false, :placeholder => 'last name'
+
+        .row.small-gutter
+          .col-xs-8
+            = f.text_field :current_address, :label => false, :placeholder => 'current address'
+          .col-xs-4
+            = f.text_field :apt_number, :label => false, :placeholder => 'apt #'
+
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :city, :label => false, :placeholder => 'city'
+          .col-xs-9
+            = f.text_field :state, :label => false, :placeholder => 'state'
+          .col-xs-3
+            = f.text_field :zip, :label => false, :placeholder => 'zip'
+        
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :home_phone, :label => false, :placeholder => 'home phone'
+          .col-xs-12
+            = f.text_field :cell_phone, :label => false, :placeholder => 'cell phone'
+          .col-xs-12
+            = f.text_field :email, :label => false, :placeholder => 'email'
+        
+
+        .row.small-gutter
+          .col-xs-12
+            %p 
+              .float-left 
+                Are you a U.S. citizen or an alien lawfully authorized to work in the U.S.? 
+              .float-right
+                .radio
+                  = f.radio_button :authorized_to_work, "1"
+                  Yes
+                .radio
+                  = f.radio_button :authorized_to_work, "0"
+                  No
+        
+        .row.small-gutter
+          .col-xs-12
+            %p
+              .float-left 
+                Do you have any friends or relatives currently working for Hines Furlong Line? 
+              .float-right
+                .radio
+                  = f.radio_button :friends_at_hunter_marine, "1"
+                  Yes
+                .radio
+                  = f.radio_button :friends_at_hunter_marine, "0"
+                  No
+        
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :friends, :label => false, :placeholder => 'if yes, please list'
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :begin_work, :label => false, :placeholder => 'when are you available to begin work?'
+
+        
+        .row.small-gutter
+          .col-xs-12
+            %p
+              .float-left  
+                Have you tested positive on a pre-employment drug or alcohol test within the past two (2) years?
+              .float-right
+                .radio
+                  = f.radio_button :drug_test, "1"
+                  Yes
+                .radio
+                  = f.radio_button :drug_test, "0"
+                  No
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :drug_test_dates, :label => false, :placeholder => 'if yes, please list dates and details'
+          %br
+        .row.small-gutter
+          .col-xs-12
+            %p 
+              .float-left 
+                Do you have a marine license or document?
+              .float-right
+                .radio
+                  = f.radio_button :marine_license, "1"
+                  Yes
+                .radio
+                  = f.radio_button :marine_license, "0"
+                  No
+              %br
+              If yes, copies will be requested by Hines Furlong Line Personnel.
+
+        
+
+        .row.small-gutter
+          .col-xs-12
+            %p 
+              .float-left 
+                Do you have a valid drivers license not currently under suspension or restrictions? 
+              .float-right
+                .radio
+                  = f.radio_button :drivers_license, "1"
+                  Yes
+                .radio
+                  = f.radio_button :drivers_license, "1"
+                  No
+        
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :license_issuing_state, :label => false, :placeholder => 'issuing state'
+        
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :license_expiration_date, :label => false, :placeholder => 'expiration date'
+
+        .row.small-gutter
+          .col-xs-12
+            %p
+              .float-left 
+                Do you have a valid TWIC card? 
+              .float-right
+                .radio
+                  = f.radio_button :twic_card, "1"
+                  Yes
+                .radio
+                  = f.radio_button :twic_card, "0"
+                  No
+
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :twic_expiration, :label => false, :placeholder => 'EXPIRATION DATE'
+
+        .row.small-gutter
+          .col-xs-12
+            %p
+              .float-left
+                Have you ever been convicted of a misdemeanor or felony which was non-traffic related? 
+              .float-right
+                .radio
+                  = f.radio_button :felon, "1"
+                  Yes
+                .radio
+                  = f.radio_button :felon, "0"
+                  No
+
+        .row.small-gutter
+          .col-xs-12
+            = f.text_field :felon_explanation, :label => false, :placeholder => 'IF YES, PLEASE LIST DATES AND DETAILS'
+        
+
+        
+        .row.small-gutter
+          .col-xs-12
+            %h2.h3
+              %span Step 2
+              .h1 Education
+
+        #employment_education_records
+          = f.fields_for :employment_education_records do |ff|
+            = render 'employment_education_record_fields', :f => ff
+
+        .row.small-gutter
+          .col-xs-12
+            %h2.h3
+              %span Step 3
+              .h1 Employment
+        #employment_history_recordso
+          = f.fields_for :employment_history_records do |ff|
+            = render 'employment_history_record_fields', :f => ff
+            
+
+        .row.small-gutter
+          .col-xs-12
+            %h2.h3
+              %span Step 4
+              .h1 References
+        #employment_references
+          = f.fields_for :employment_references do |ff|
+            = render 'employment_reference_fields', :f => ff
+
+        .row.small-gutter
+          .col-xs-12
+            %h2.h3
+              %span Step 5
+              .h1 Conditions
+            %div
+              %p I certify that all the information that I have provided is true and complete to the best of my knowledge. I understand that false statements on this application are sufficient cause for denial of employment or, if employed, reason enough for dismissal without regard to the length of my employment.
+              %p If hired, I understand and agree that my employment is for no definite period of time and may be terminated at any time without prior notice. My employment with Hines Furlong Line shall be "at will" and nothing herein shall institute any contract of employment between the employer and applicant.
+              %p I am aware that I will be given a comprehensive physical exam which includes a drug and alcohol screen administered by a company physician prior to my employment and that I will be subject to drug and alcohol testing as required by Company policy and/or U.S. Coast Guard regulations.
+
+        .row.small-gutter
+          .col-xs-12
+            .chead NOTICE TO APPLICANT REGARDING CONSUMER REPORTS and BACKGROUND CHECKS
+            %div
+              %p A consumer report, investigative consumer report, and/or a background check including information concerning your character, employment history, general reputation, personal characteristics, police record, education, qualifications, motor vehicle record, mode of living, and/or credit and indebtedness may be obtained in connection with your application for and continued employment with the company. A consumer report containing medical information, and injury or illness records may be obtained after a tentative offer of employment has been made. Upon five (5) days of a written request of Hines Furlong Line's Personnel Department the scope of the consumer report and background check may be disclosed to you.
+              %p Before any adverse action is taken, based in whole or in part of the information contained in these reports and checks, you will be provided copies of the reports to including contact information of the reporting agencies, a summary of your rights under the Fair Credit Reporting Act, as well as additional information on your rights under the law.
+
+        .row.small-gutter
+          .col-xs-12
+            .chead CONSENT TO OBTAINING CONSUMER REPORTS and/or BACKGROUNDCHECKS
+            %div
+              %p I HAVE READ THE "NOTICE TO APPLICANT REGARDING CONSUMER REPORTS AND BACKGROUND CHECKS" AND HEREBY AUTHORIZE THE COMPANY TO OBTAIN CONSUMER REPORTS, INVESTIGATIVE CONSUMER REPORTS, AND/OR BACKGROUND CHECKS AS DESCRIBED. I UNDERSTAND THAT I HAVE THE RIGHT TO MAKE A WRITTEN REQUEST TO RECEIVE ADDITIONAL INFORMATION ABOUT ANY INVESTIGATION OR REPORT THAT ARE MADE, INCLUDING THE NAME, ADDRESS, AND TELEPHONE NUMBER OF THE REPORTING AGENCY.
+              %p I HEREBY AUTHORIZE ANY PRESENT OR FORMER EMPLOYER, CONSUMER REPORTING AGENCIES, EDUCATIONAL INSTITUTIONS, CRIMINAL JUSTICE AGENCIES, DEPARTMENTS OF MOTOR VEHICLES, PUBLIC AGENCIES, FINANCIAL INSTITUTIONS, AND OTHER PERSONS OR AGENCIES TO SUBMIT ANY INFORMATION AND/OR THEIR OPINIONS OF ME. I HOLD SAID PERSONS AND/OR ORGANIZATIONS WITHOUT LIABILITY FOR STATEMENTS AND/OR OPINIONS MADE REGARDING MY CHARACTER, EXPERIENCE OR QUALIFICAITONS. 
+     
+              %div 
+                %p BY CHECKING THE BOX BELOW ACKNOWLEDGES THAT I HAVE READ AND UNDERSTAND ALL OF THE ABOVE STATEMENTS.
+        .row.small-gutter
+          .col-xs-3
+            %p
+              I Agree
+              = f.check_box :agree_to_background_check, :label => false
+          .col-xs-9
+            = f.text_field :background_check_agreement_date, :label => false, :placeholder => 'DATE'
+
+        
+              
+        .row.small-gutter
+          .col-xs-12
+            .chead CONSENT TO DRUG AND ALCOHOL TESTING
+            %div
+              %p I understand and agree that prior to employment and/or during the course of my employment, I may be required to submit to tests to determine alcohol or drug use (including but not limited to breathalyzer, urinalysis, hair tests and/or blood tests), and I hereby release from all liability all clinics, doctors, nurses or contractors who conduct such tests. I consent to the taking of such tests as directed by Hines Furlong Line, and further consent that the results of any such tests may form the basis for withdrawal of any offer or for my termination if hired.
+
+              %p I authorize a photocopy or facsimile of this release to be considered as effective and valid as the original. All results will be proprietary and will be kept confidential and will not be provided to any other parties other than the company, our legal representatives, government agencies, or other perspective employers as required by law, court order or subpoena.
+
+              %p I hereby understand and agree that if I (1) fail a chemical test for controlled substances, (2) fail a breath alcohol test, (3) refuse to participate in a company conducted pre-employment, random, reasonable cause, or post accident test, I will be denied employment as a crew member, and be subjected to suspension and revocation proceedings according to applicable United States Coast Guard regulations. I further understand and agree to hold harmless Hines Furlong Line, our employees, agents, and assigns from any action taken against my License, Certificate or Registry, or Merchant Mariner's Document as a result of my refusal or positive test results.
+
+              %p Hines Furlong Line's retrieval and usage of this information will comply with applicable laws, rules, and regulations. Hines Furlong Line is an Equal Opportunity Employer and does not discriminate based upon race, color, gender, national origin, religion, age or disability. 
+         
+        .row.small-gutter
+          .col-xs-3
+            %p
+              I Agree
+              = f.check_box :agree_to_drug_test
+          .col-xs-9
+            = f.text_field :drug_test_agreement_date, :label => false, :placeholder => 'DATE'
+
+        .row.small-gutter
+          .col-xs-12
+            .chead MEDICAL INFORMATION RELEASE
+            %div
+              %p In connection with employment at Hines Furlong Line (hereafter "Company"), may request a medical inquiry and/or examination for purposes of establishing and verifying the performance of essential job-related functions, with and without reasonable accommodation. I authorize and request all healthcare providers or hospitals to release said information for verification of a medical inquiry, if required, to the Company, its designated representatives, or its healthcare provider. I also understand and agree that I may be required to take a fitness for duty exam when there is a need to determine whether I am still able to perform the essential functions of the job in a safe and complaint manner.
+              %p I hereby hold harmless the Company, its officers, directors, employers, agents and assigns, for my death, any personal injury or illness resulting from, arising out of, or incurred during such test, without regard to the causes thereof or the Company's negligence, whether sole, joint, concurrent, active or passive.
+              %p I authorize a photocopy or facsimile of the Medical Information Release to be considered as effective and valid as the original. All results will be proprietary, will be kept confidential, and will not be provided to any parties other than the Company or its legal representatives, unless required to do so by court order or subpoena.
+              %p I voluntarily waive all recourse against and hereby release the requested parties from liability for complying with this Medical Information Release. The Company's retrieval and usage of this information will comply with applicable laws, rules, and regulations. The Company is an Equal Opportunity Employer and does not discriminated based upon race, color, gender, national origin, religion, age, or disability.
+              %p I further understand that the above information has been explained to me, and I fully understand its contents and applications. 
+     
+        .row.small-gutter
+          .col-xs-3
+            %p
+              I Agree
+              = f.check_box :agree_to_medical_release
+          .col-xs-9
+            = f.text_field :medical_release_agreement_date, :label => false, :placeholder => 'DATE'
+
+        .row.small-gutter
+          .col-xs-12
+            = f.submit :submit
+
+    

@@ -1,0 +1,29 @@
+- if @articles.count != 0
+  - @articles.each do |article|
+    .news
+      %h3.unset-spacing
+        = link_to news_article_path(article) do
+          = article.title
+      %p.h3.alt= article.created_at.strftime("%b %Y")
+      %br
+      = article.teaser
+      %br
+      %p.caption
+        Category: 
+        %a= article.category
+        &nbsp;&nbsp;|&nbsp;&nbsp; 
+        %b SHARE ON: 
+        = link_to "https://www.facebook.com/sharer/sharer.php?u=#{news_article_url(article)}" do
+          %b FACEBOOK
+        &nbsp;&nbsp;|&nbsp;&nbsp; 
+        = link_to "https://twitter.com/home?status=#{news_article_url(article)}" do
+          %b TWITTER
+        
+        - if article.file.exists?
+          &nbsp;&nbsp;|&nbsp;&nbsp; 
+          %a{ :href => article.file } 
+            %b DOWNLOAD
+
+
+- else
+  No Events

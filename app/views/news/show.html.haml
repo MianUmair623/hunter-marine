@@ -1,0 +1,38 @@
+#recent-news.bg-white.section
+  .container-fluid
+    -# javascript in script.js file changes max-width for center-block and column dependent upon image existing
+    .max-1000.center-block
+      .row
+        .col-xs-12.text-center
+          %h2.h3
+            %span Hunter Marine's
+            .h1 Recent News
+      .row.news
+        .col-sm-7.col-xs-12#text-column
+          %h3.unset-spacing
+            = @article.title
+              
+          %p.h3.alt= @article.created_at.strftime("%b %Y")
+          %br
+          = @article.text
+          %br
+          %p.caption
+            Category: 
+            %a= @article.category
+            &nbsp;&nbsp;|&nbsp;&nbsp; 
+            %br.visible-xs
+            %b SHARE ON: 
+            = link_to "https://www.facebook.com/sharer/sharer.php?u=#{news_article_url(@article)}" do
+              %b FACEBOOK
+            &nbsp;&nbsp;|&nbsp;&nbsp; 
+            = link_to "https://twitter.com/home?status=#{news_article_url(@article)}" do
+              %b TWITTER
+            
+            - if @article.file.exists?
+              &nbsp;&nbsp;|&nbsp;&nbsp; 
+              %a{ :href => @article.file } 
+                %b DOWNLOAD
+
+        - if @article.image.exists?
+          .col-sm-5.col-xs-12
+            = image_tag @article.image(:resized), class: 'img-responsive article-img'

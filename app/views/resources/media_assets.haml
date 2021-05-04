@@ -1,0 +1,69 @@
+- content_for :title, 'Tank Barges - Media Assets and Helpful Links'
+- content_for :description, 'Branding, media, and industry resources from Hines Furlong Line.'
+
+#media-assets.bg-white.section
+  .container-fluid
+    .row.text-center
+      .col-xs-12
+        %h2.h3
+          %span Hines Furlong Line
+          .h1.primary Media Assets
+    .row
+      .col-sm-5.text-center
+        = image_tag "media-logo360.jpg", class: 'img-responsive center-block', style:'max-width:360px'
+        %br
+        %h3.h4 Company Logos
+        %p 
+          With text: EPS, JPG
+        %p
+          Without text: EPS, JPG
+        = link_to "DOWNLOAD ALL", "/Company-Logos-2.zip", class: 'button max-200 small center-block', target: :_blank
+      .col-sm-2
+        .hidden-xs
+          %div{ style:'height:420px; width:1px; background:#ddd; margin:0 auto'}
+        .visible-xs
+          %div{ style:'height:1px; background:#ddd; margin:40px 0;'}
+      .col-sm-5
+        = image_tag 'archive/The Steamer Bowling Green.jpg', class: 'img-responsive center-block', style:'max-width:332px'
+        %br
+        %br
+        .text-center
+          %h2.h4 Image Archive
+          = link_to 'View Gallery', archive_path, class: 'button max-200 center-block small'
+
+#useful-links.bg-neutral_light.section.text-center
+  .container-fluid
+    .row
+      .col-xs-12
+        %h2.h3
+          .h1.primary Useful Links
+    .max-865.center-block
+      .row
+        %a.useful-link.col-sm-6.col-md-4.vert-center{ :href => 'http://www.americanwaterways.com', :target => '_blank' }
+          .bg-white
+            = image_tag "friends/awo.jpg", :class => 'max-p-100 center-block'
+            www.americanwaterways.com
+        %a.useful-link.col-sm-6.col-md-4.vert-center{ :href => 'http://www.waterways.org', :target => '_blank' }
+          .bg-white
+            = image_tag "friends/nwc.jpg", :class => 'max-p-100 center-block'
+            www.waterways.org
+        %a.useful-link.col-sm-6.col-md-4.vert-center{ :href => 'http://www.uscg.mil', :target => '_blank' }
+          .bg-white
+            = image_tag "friends/uscg.jpg", :class => 'max-p-100 center-block'
+            www.uscg.mil
+        %a.useful-link.col-sm-6.col-md-4.vert-center{ :href => 'http://www.waterwayscouncil.org', :target => '_blank' }
+          .bg-white
+            = image_tag "friends/wci.jpg", :class => 'max-p-100 center-block'
+            www.waterwayscouncil.org
+        .useful-link.col-sm-6.col-md-4.vert-center
+          .bg-white
+            = image_tag "friends/pcus.jpg", :class => 'max-p-100 center-block'
+            .row
+              .col-sm-6
+                = link_to "Paducah, KY", 'http://www.propellerclubofpaducah.org', target: '_blank'
+              .col-sm-6
+                = link_to "Nashville, TN", 'http://www.propellerclubnashville.com', target: '_blank'
+        %a.useful-link.col-sm-6.col-md-4.vert-center{ :href => 'http://www.seamenschurch.org', :target => '_blank' }
+          .bg-white
+            = image_tag "friends/tsci.jpg", :class => 'max-p-100 center-block'
+            www.seamenschurch.org

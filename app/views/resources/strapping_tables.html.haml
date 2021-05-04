@@ -1,0 +1,38 @@
+- content_for :title, 'Tank Barges - Strapping Tables'
+- content_for :description, 'Hines Furlong Line Strapping Tables provides details on each HFL barge.'
+
+= image_tag 'strapping-table.png', class: 'img-responsive'
+
+.bg-white.section
+  .container-fluid
+    .max-1030.center-block
+      .row.text-center
+        .col-xs-12
+          %h3
+            %span Tank Barges
+            .h1 STRAPPING TABLES
+
+      .row.large-gutter
+        .col-xs-12.service
+          %br 
+          %br 
+          .boat_positions
+            - if @strappings.empty?
+              %h3.text-center No Barges Available
+            - else
+              %table.text-center.footable.table.strapping-table
+                %thead.bg-primary
+                  %tr
+                    %th Barge Number  
+                    %th Year Built  
+                    %th Shipyard
+                    %th Strappings File
+                %tbody
+                  - @strappings.each do |barge|
+                    %tr{ class: cycle('odd', 'even')}
+                      %td= barge.barge_number
+                      %td= barge.year_built
+                      %td= barge.shipyard
+                      %td.pdf-link
+                        - if barge.strappings.present?
+                          = link_to embedded_svg('icon-download.svg', class: 'download-icon'), barge.strappings.url, target: :_blank, download: ''

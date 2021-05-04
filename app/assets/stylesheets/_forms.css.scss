@@ -1,0 +1,301 @@
+form input, .yaselect-current {
+  height: $form_input_height;
+  line-height: $form_input_height;
+  @include border-top-radius(10px);
+  @include border-bottom-radius(10px);
+  @include border-left-radius(10px);
+  @include border-right-radius(10px);
+  font-family: 'pt_sansregular';
+  text-transform: capitalize;
+}
+.yaselect-current {
+  &.focus {
+    border-width: 2px;
+    text-indent: 9px;
+    line-height: 58px;
+    border-color: $primary;
+    &:after {
+      color: $primary;
+    }
+  }
+}
+
+.acknowlege {
+  line-height: $form_input_height;
+  margin-top: 15px; margin-bottom: 5px;
+}
+
+.bg-primary, .bg-secondary, .bg-neutral-dark {
+.yaselect-current {
+  color: #fff;
+  &:after {
+    color: #fff;
+  }
+  &.focus {
+    background: #FFF;
+    border-color: #fff;
+    color: $text-color;
+    @include placeholder($text-color);
+    &:after {
+      color: $text-color;
+    }
+  }
+}
+}
+select {
+  width: 100%;
+  height: calc(#{$form_input_height} + 2px);
+  border: 0px;
+  outline: 0px;
+  border-color: $form_input_border_color;
+
+  option {
+    background: $form_input_background;
+    color: $form_input_color;
+  }
+}
+
+form p {
+  margin: 15px 0 0;
+}
+
+textarea {
+  @include border-top-radius(10px);
+  @include border-bottom-radius(10px);
+  @include border-left-radius(10px);
+  @include border-right-radius(10px);
+}
+
+
+.radios, .checkboxes {
+  height: $form_input_height;
+  line-height: $form_input_height;
+  label {
+    margin-right: 25px;
+    input {
+      margin-left: 5px;
+    }
+  }
+}
+
+.radio {
+    display: inline-block;
+    margin-right: 7px;
+  }
+
+form input[type="radio"], form input[type="checkbox"] {
+  height: auto;
+  line-height: auto;
+}
+
+form input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]), form textarea, .yaselect-current {
+  width: 100%;
+  margin-bottom: $form_input_margin;
+  background: $form_input_background;
+  border: $form_input_border_width solid $form_input_border_color;
+  box-shadow: none;
+  text-indent: $form_input_indent;
+  resize: none;
+  @include placeholder($placeholder);
+  -webkit-appearance:none;
+  &:focus {
+    border-color: $primary;
+    border-width: 2px;
+    text-indent: 9px;
+    line-height: 58px;
+  }
+}
+.bg-primary, .bg-secondary, .bg-neutral-dark {
+form input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]), form textarea, .yaselect-current {
+  background: none;
+  border-color: #fff;
+  color: #fff;
+  @include placeholder(#fff);
+  &:focus {
+    background: #fff;
+    color: $text-color;
+    @include placeholder($text-color);
+  }
+}
+}
+
+.yaselect-current {
+  color: $form_input_color;
+  &:after {
+    content: '\f107';
+    color: $form_input_color;
+    right: -10px;
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 2.25em;
+    width: $form_input_height;
+    height: $form_input_height;
+  }
+  &.focus:after {
+    right: -11px;
+  }
+}
+form textarea {
+  color: $form_input_color;
+  background: $form_input_background;
+  height: 150px;
+  text-indent: 0;
+  padding: 15px;
+  &:focus {
+    line-height: 19px;
+    text-indent: 0;
+    padding: 15px 14px;
+  }
+}
+form input[type='submit'],
+form input[type='button'],
+form button,
+button:not(.mfp-close):not(.mfp-arrow),
+a.button {
+  width: 100%;
+  padding: 0;
+  height: $form_input_height;
+  line-height: 52px;
+  margin-bottom: $form_input_margin;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  border: 4px solid $primary;
+  color: $primary;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-appearance: none;
+  @include border-top-radius(10px);
+  @include border-bottom-radius(10px);
+  @include border-left-radius(10px);
+  @include border-right-radius(10px);
+
+  &.small {
+    height: 48px;
+    line-height: 40px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: set-text-color($button_bg_hover_color);
+    background: $button_bg_hover_color;
+    border: 4px solid $button_bg_hover_color;
+  }
+  &:active {
+    color: set-text-color($primary);
+    background: $primary;
+    border: 4px solid $primary;
+  }
+}
+
+.bg-primary, .bg-secondary, .bg-neutral-dark {
+form input[type='submit'],
+form input[type='button'],
+form button,
+button:not(.mfp-close):not(.mfp-arrow),
+a.button {
+  border-color: #fff;
+  color: #fff;
+  background: none;
+
+  &:hover {
+    color: $primary;
+    background: #fff;
+    border-color: #fff;
+  }
+
+}
+}
+
+.bg-white {
+form input[type='submit'],
+form input[type='button'],
+form button,
+button:not(.mfp-close):not(.mfp-arrow),
+a.button {
+  border-color: $primary;
+  color: $primary;
+  background: none;
+
+  &.filled-in, &:hover {
+    color: #fff;
+    background: $primary;
+    border-color: $primary;
+  }
+
+}
+}
+
+form.large input[type='submit'],
+form.large input[type='button'],
+form.large button,
+button:not(.mfp-close):not(.mfp-arrow),
+a.button.large {
+  font-size: 1.5em;
+}
+form input[type="text"], form button, a.button, form input[type='submit'],form input[type='submit'],form input[type='button'],button,a.button {
+  -webkit-appearance: none;
+}
+form input, form textarea, select, a {  outline: none; }
+
+.add-another{ cursor: pointer;}
+
+
+#app-prev-next {
+  margin-top: 50px;
+}
+
+.icheckbox,
+.iradio {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: image-url('red.png') no-repeat;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0 15px;
+}
+
+.icheckbox {
+    background-position: 0 0;
+}
+.icheckbox.checked {
+    background-position: -22px 0;
+}
+.icheckbox.disabled {
+    background-position: -44px 0;
+    cursor: default;
+}
+.icheckbox.checked.disabled {
+    background-position: -66px 0;
+}
+
+.iradio {
+    background-position: -88px 0;
+}
+.iradio.checked {
+    background-position: -110px 0;
+}
+.iradio.disabled {
+    background-position: -132px 0;
+    cursor: default;
+}
+.iradio.checked.disabled {
+    background-position: -154px 0;
+}
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  .icheckbox,
+  .iradio {
+      background-image: image-url('red@2x.png');
+      -webkit-background-size: 176px 22px;
+      background-size: 176px 22px;
+  }
+}
+

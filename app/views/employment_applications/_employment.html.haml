@@ -1,0 +1,20 @@
+.row.small-gutter
+  .col-xs-12
+    %h2.h3.text-center
+      %span Step 3
+      .h1 Employment
+#employment_history_records
+  .records
+    = f.fields_for :employment_history_records do |ff|
+      .employment-record
+        = render 'employment_history_record_fields', :f => ff
+        %hr
+  .row.small-gutter
+    .col-xs-12
+      = image_tag 'plus-circle.png', id: 'add-employment-record', class: 'center-block block add-another'
+      %br
+  #app-prev-next.row
+    .col-xs-12 
+      = link_to 'Back to Step 3', step_employment_applications_path('education'), class: 'button reverse'
+    .col-xs-12
+      = f.submit 'Next to Step 4', class: 'filled-in'

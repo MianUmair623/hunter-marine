@@ -1,0 +1,31 @@
+- content_for :title, 'Harbor Services - Towing - Fleeting'
+- content_for :description, 'Hines Furlong Line is a leader in Harbor Services in the Nashville area. We offer leasing, tug services, minor top water repairs and dry cargo barge cleaning in the Nashville Harbor.'
+
+.hero-wrapper
+  .hero-image{ style: "background-image: url(#{asset_path('donna-sunset.jpg')});"}
+
+.bg-white.section
+  .container-fluid
+    .max-1030.center-block
+      .row.text-center
+        .col-xs-12
+          %h3
+            %span Hines Furlong Line
+            .h1 TOWING & FLEETING
+
+      .row.large-gutter
+        .col-xs-12.service
+          %br
+          %p Hines Furlong Line is the leader in towing and harbor services on the Cumberland River. We operate the exclusive barge fleeting location in Clarksville, TN as well as the only CDC fleet in Nashville, TN. Due to our fleeting and shoreside support locations as well as our vessel frequency on the Cumberland River, we are uniquely positioned to provide the most efficient, best-in-class service in the region.
+
+          %p Using our expertise in logistics and our passion for river operations, we are able to develop tailored shipping plans for your cargo. We put tremendous value into building relationships with every customer we work with regardless if it is for long term partnerships or a short term spot barge movement.
+
+.section.bg-primary
+  .container-fluid
+    .max-500.center-block
+      .row
+        %br
+        .col-sm-6
+          = mail_to "Traffic@Hfline.com", "Towing Request", subject: "Rate Request - Transportation", class: 'button'
+        .col-sm-6
+          = link_to "Towboat Fleet", "/boat-charters", class: 'button'

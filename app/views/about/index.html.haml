@@ -1,0 +1,31 @@
+- content_for :title, 'River Transportation - Kent Furlong'
+- content_for :description, 'Hines Furlong Line represents one of the longest standing family traditions in the inland river transportation industry.'
+
+.hero-wrapper
+  .hero-image{ style: "background-image: url(#{asset_path('about-flags.jpg')});"}
+
+.bg-white.section
+  .container-fluid
+    .max-875.center-block
+      .row
+        .col-xs-12
+          %h3.text-center
+            %span Welcome to
+            .h1 HINES FURLONG LINE
+
+
+          %p Hines Furlong Line represents one of the longest standing family traditions in the inland river transportation industry. After approximately 135 years in the business, the tradition is alive today. With sights set on the future, HFL founder Kent Furlong is building on the experience from the past and the innovations of the future to better serve clients’ river transportation needs.
+
+          %p With HFL’s willingness to adapt and grow, Furlong puts no limits on the capacity that the company can serve its customers in the future. HFL prides itself on association with some of the finest customers, vendors, consultants, and employees in the industry. After all, it is these great people that make us five generations strong.
+
+          %p Our new approach to an old business has been well-received in the industry because HFL embraces the conservative value of doing things right once—no matter the cost or effort required. HFL also prides itself on open-mindedness and constantly seeks to improve service across the industry. We look to make the future of inland river transportation even brighter by growing and evolving with today’s changing market, but never neglecting the family roots in the business.
+
+#checker
+  .row.no-gutter
+    .col-sm-12.bg-primary
+      .content.bg-primary
+        %h4.text-center
+          %span Five Generations
+          .h1.white ON THE RIVER
+        .pos-abs
+          = link_to "READ THE STORY", about_river_path, class: 'button max-275 reverse center-block'

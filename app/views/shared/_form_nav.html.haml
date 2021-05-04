@@ -1,0 +1,21 @@
+#form-nav
+  .container-fluid
+    .row.no-gutter.text-center
+      %a.step.col-xs-p20{class: employment_nav_class('personal', @application), href: step_employment_applications_path('personal') }
+        .h1 1
+        .h6 Personal
+      %a.step.col-xs-p20{class: employment_nav_class('education', @application), href: step_employment_applications_path('education') }
+        .h1 2
+        .h6 Education
+      %a.step.col-xs-p20{class: employment_nav_class('employment', @application), href: step_employment_applications_path('employment') }
+        .h1 3
+        .h6 employment
+      %a.step.col-xs-p20{class: employment_nav_class('references', @application), href: step_employment_applications_path('references') }
+        .h1 4
+        .h6 references
+      %a.step.col-xs-p20{class: employment_nav_class('conditions', @application), href: step_employment_applications_path('conditions') }
+        .h1 5
+        .h6 conditions
+
+    .sep.gray.max-400.center-block
+    %br

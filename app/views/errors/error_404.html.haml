@@ -1,0 +1,12 @@
+
+#error404
+  
+  #box
+    .row.no-gutter
+      .col-xs-1.col-sm-4
+      .col-xs-10.col-sm-4
+        #content
+          %h1.title OOPS!
+          %p We can't seem to find the page you're looking for.
+          %p.code error code: 404
+          = link_to "RETURN HOME", root_path, :class => 'button max-200 small'

@@ -1,0 +1,9 @@
+- content_for :title, 'Employment Application - Deckhand'
+- content_for :description, 'Make a career in river transportation with Hines Furlong Line.'
+
+- if flash[:success] || params[:done] == "1" || params[:show] == "1"
+  #content
+    %p.chead{:style=> 'margin: 0px 0px 10px 0px;'}= "Your application has been submitted."
+- else
+  .section.bg-white
+    = render partial: 'form', locals: { application: @application }

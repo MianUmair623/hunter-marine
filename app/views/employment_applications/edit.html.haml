@@ -1,0 +1,19 @@
+- content_for :title, 'Employment Application - Deckhand'
+- content_for :description, 'Make a career in river transportation with Hines Furlong Line.'
+
+= image_tag "careers-banner.jpg", :class => 'img-responsive'
+.section.bg-white
+  .max-720.center-block
+    = render :partial => 'shared/form_nav', locals: { step: @application.step }
+    .max-400.center-block
+      = form_for @application, url: update_employment_applications_path(@application.step), method: :put do |f|
+        - if f.object.errors.any?
+          #error_explanation
+            .alert.alert-error
+              The form contains #{pluralize(f.object.errors.count, "error")}.
+            %ul
+              - f.object.errors.full_messages.each do |msg|
+                %li
+                  * #{msg}
+
+        = render partial: @application.step, locals: { f: f }

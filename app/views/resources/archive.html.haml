@@ -1,0 +1,21 @@
+- content_for :title, 'Image Archive'
+- content_for :description, 'Image Archive'
+
+.bg-white.section
+  .container-fluid
+    .row.text-center
+      .col-xs-12
+        .max-725.center-block
+          %h2
+            %span &nbsp;
+            .h1 Image Archive
+
+#archive.bg-neutral-light.section
+  .container-fluid
+    .row.grid
+      - @images.each do |(image,caption)|
+        .col-xs-6.col-sm-4.grid-item
+          %a.block.text-center.popup-image-link{ href: image_path("archive/#{image}.jpg")}
+            = image_tag("archive/#{image}.jpg", class: 'thumb img-responsive')
+            .content
+              %p.caption= caption

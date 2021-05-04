@@ -1,0 +1,67 @@
+- content_for :title, 'River Transportation Career - Deckhand'
+- content_for :description, 'Make a career in river transportation with Hines Furlong Line.'
+
+.hero-wrapper
+  .hero-image{ style: "background-image: url(#{asset_path('bg_careers_wide.jpg')});"}
+
+.bg-white.section
+  .container-fluid
+    .max-875.center-block
+      .row
+        .col-xs-12.text-center
+          %h2.h3
+            %span Hines Furlong Line
+            .h1 Careers
+
+          .sep.max-400.center-block.gray
+
+    .max-840.center-block
+      .row
+        .col-xs-12
+          %h3.alt Current Job Opportunities
+          %br
+
+      - if @careers.any?
+        - @careers.each do |career|
+          .row
+            .col-xs-12
+              .career
+                %h2.h4.unset-spacing= career.title
+
+                %p= career.location
+
+                .career-description= career.description
+
+                %br
+                = link_to "Apply Online", 'https://docs.google.com/forms/d/1XgTyMkm2Wr1-rHOw3lCu40UdYrMwKt4Xr5HGQebqVVc/viewform', target: :_blank, :class => 'button small max-150'
+      - else
+        .row
+          .col-xs-12
+            %p There are no career opportunities posted at this time. Please check back soon.
+
+#career-slides
+  .swiper-container
+    .swiper-wrapper
+      = image_tag "careers/Cook.jpg", :class => 'swiper-slide'
+      = image_tag "careers/Deckhands.jpg", :class => 'swiper-slide'
+      = image_tag "careers/deck-rope.jpg", :class => 'swiper-slide'
+      = image_tag "careers/Deck.jpg", :class => 'swiper-slide'
+      = image_tag "careers/Eric-1.jpg", :class => 'swiper-slide'
+      = image_tag "careers/boat-guy.jpg", :class => 'swiper-slide'
+      = image_tag "careers/Hamilton-2.jpg", :class => 'swiper-slide'
+      = image_tag "careers/boat-group.jpg", :class => 'swiper-slide'
+      = image_tag "careers/Nashville-Hunter-Walbash-River.jpg", :class => 'swiper-slide'
+
+
+.bg-neutral-dark.text-center.section
+  .container-fluid
+    .max-760.center-block
+      .row
+        .col-xs-12
+          %h3
+            %span.white Employment Application
+            .h1 Online
+      .row
+        %p Hines Furlong Line supports the United States Coast Guard in mandating zero tolerance of illegal drugs and alcohol. We are committed to everyone's welfare and feel this program is necessary to assure the safety and welfare of all our employees.
+        %br
+        = link_to "APPLY ONLINE", "https://docs.google.com/forms/d/1XgTyMkm2Wr1-rHOw3lCu40UdYrMwKt4Xr5HGQebqVVc/viewform", target: :_blank, :class => 'button max-275 center-block'

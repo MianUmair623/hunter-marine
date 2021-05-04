@@ -1,0 +1,21 @@
+.hero-wrapper
+  .hero-image{ style: "background-image: url(#{asset_path('about-flags.jpg')});"}
+
+#recent-news.bg-white.section
+  .container-fluid
+    .max-800.center-block
+      .row
+        .col-xs-12.text-center
+          %h2.h3
+            %span Hunter Marine's
+            .h1 Recent News
+
+      .row
+        .col-xs-12
+          = render :partial => 'shared/news_articles'
+
+      
+            
+      .row
+        .col-xs-12.news-pager
+          = will_paginate @articles

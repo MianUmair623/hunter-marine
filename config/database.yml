@@ -1,0 +1,26 @@
+development: &defaults
+  adapter: mysql2
+  encoding: utf8
+  database: hunter
+  pool: 5
+  username: sammy
+  password: Password123456!
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+# test: 
+#   <<: *defaults
+#   database: hunter-marine
+
+# beta:
+#   <<: *defaults
+#   database: hunter_marine_beta
+#   username: hunter_marine_b
+#   password: b4kfx947#
+
+# production:
+#   <<: *defaults
+#   database: hunter_marine_production
+#   username: hunter_marine_p
+#   password: b4JLx947#

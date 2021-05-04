@@ -1,0 +1,26 @@
+#keep-up i {
+  font-size: 3.5em;
+  margin: 0 5px;
+  color: $text-color;
+}
+
+.contact_submissions #checker {
+  a.button {
+    margin-top: 0;
+  }
+  .bg-white {
+    color: $gray_light;
+    h3 {
+      margin-bottom: 0;
+    }
+    h4, h5 {
+      color: $gray_light;
+    }
+    h5 {
+      margin-top: 25px;
+    }
+  }
+}
+
+.footable-detail-show{ border-top: 1px solid #ddd}
+.footable-row-detail-cell { border-bottom: 1px solid #ddd}

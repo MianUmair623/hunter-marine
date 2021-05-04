@@ -1,0 +1,89 @@
+* {
+  letter-spacing: .05em;
+  -webkit-font-smoothing: antialiased;
+}
+
+$color-names: primary secondary tertiary neutral;
+$color-vars: $primary $secondary $tertiary $neutral;
+@each $name in $color-names {
+  $i: index($color-names, $name);
+  .#{$name} {
+    color: nth($color-vars, $i);
+  }
+}
+
+body {
+  font-size: 15px;
+}
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+
+  margin-top: 0;
+  font-family: 'montserratbold';
+  color: $primary;
+  text-transform: uppercase;
+  
+  &.unset-spacing {
+    margin: 0; padding: 0;
+  }
+
+  &.large {
+    font-size: 4em;
+  }
+  
+  &.alt, span {
+    display: block;
+    color: $secondary;
+    font-family: 'pt_sansregular';
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+    line-height: 120%;
+  }
+
+}
+
+h1,.h1 {
+  margin-bottom: 37px;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  h1,.h1 {
+    font-size: 22px;
+  }
+  h2,.h2 {
+    font-size: 17px;
+  }
+}
+
+p {
+  line-height: 142%;
+  &.caption {
+    font-size: .8em;
+  }
+}
+
+a, a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+#main-content p a {
+  color: $primary;
+}
+
+#large-image, #home-slideshow {
+@media (min-width: 0px) and (max-width: 767px) {
+    .content {
+      padding: 8% 38px;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 1.15em;
+    }
+  }
+}

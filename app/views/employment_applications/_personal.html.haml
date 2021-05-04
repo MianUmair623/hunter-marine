@@ -1,0 +1,177 @@
+.container-fluid
+  .row.small-gutter
+    .col-xs-12
+      %h2.h3.text-center
+        %span Step 1
+        .h1 Personal Information
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :position, :label => false, :placeholder => 'list positions applying for', value: params[:job].nil? ? '' : params[:job]
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :first_name, :class => 'checkinput', :label => false, :placeholder => 'first name'
+    .col-xs-12
+      = f.text_field :middle_name, :class => 'checkinput', :label => false, :placeholder => 'middle name'
+    .col-xs-12
+      = f.text_field :last_name, :class => 'checkinput', :label => false, :placeholder => 'last name'
+
+  .row.small-gutter
+    .col-xs-8
+      = f.text_field :current_address, :label => false, :placeholder => 'current address'
+    .col-xs-4
+      = f.text_field :apt_number, :label => false, :placeholder => 'apt #'
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :city, :label => false, :placeholder => 'city'
+    .col-xs-9
+      = f.text_field :state, :label => false, :placeholder => 'state'
+    .col-xs-3
+      = f.text_field :zip, :label => false, :placeholder => 'zip'
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :home_phone, :label => false, :placeholder => 'home phone'
+    .col-xs-12
+      = f.text_field :cell_phone, :label => false, :placeholder => 'cell phone'
+    .col-xs-12
+      = f.text_field :email, :label => false, :placeholder => 'email'
+
+
+  .row.small-gutter
+    .col-xs-12
+      %p
+        Are you a U.S. citizen or an alien lawfully authorized to work in the U.S.?
+
+      .radio
+        %label
+          = f.radio_button :authorized_to_work, "1"
+          Yes
+      .radio
+        %label
+          = f.radio_button :authorized_to_work, "0"
+          No
+
+  .row.small-gutter
+    .col-xs-12
+      %p
+        Do you have any friends or relatives currently working for Hines Furlong Line?
+
+      .radio
+        %label
+          = f.radio_button :friends_at_hunter_marine, "1"
+          Yes
+      .radio
+        %label
+        = f.radio_button :friends_at_hunter_marine, "0"
+        No
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :friends, :label => false, :placeholder => 'if yes, please list'
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :begin_work, :label => false, :placeholder => 'when are you available to begin work?'
+
+
+  .row.small-gutter
+    .col-xs-12
+      %p
+        Have you tested positive on a pre-employment drug or alcohol test within the past two (2) years?
+
+      .radio
+        %label
+          = f.radio_button :drug_test, "1"
+          Yes
+      .radio
+        %label
+          = f.radio_button :drug_test, "0"
+          No
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :drug_test_dates, :label => false, :placeholder => 'if yes, please list dates and details'
+    %br
+  .row.small-gutter
+    .col-xs-12
+      %p
+        Do you have a marine license or document?
+
+      .radio
+        %label
+          = f.radio_button :marine_license, "1"
+          Yes
+      .radio
+        %label
+          = f.radio_button :marine_license, "0"
+          No
+      %p
+        If yes, copies will be requested by Hines Furlong Line Personnel.
+
+
+
+  .row.small-gutter
+    .col-xs-12
+      %p
+        Do you have a valid drivers license not currently under suspension or restrictions?
+
+      .radio
+        %label
+          = f.radio_button :drivers_license, "1"
+          Yes
+      .radio
+        %label
+          = f.radio_button :drivers_license, "1"
+          No
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :license_issuing_state, :label => false, :placeholder => 'issuing state'
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :license_expiration_date, :label => false, :placeholder => 'expiration date'
+
+  .row.small-gutter
+    .col-xs-12
+      %p
+
+        Do you have a valid TWIC card?
+
+      .radio
+        %label
+          = f.radio_button :twic_card, "1"
+          Yes
+      .radio
+        %label
+          = f.radio_button :twic_card, "0"
+          No
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :twic_expiration, :label => false, :placeholder => 'expiration date'
+
+  .row.small-gutter
+    .col-xs-12
+      %p
+
+        Have you ever been convicted of a misdemeanor or felony which was non-traffic related?
+
+      .radio
+        %label
+          = f.radio_button :felon, "1"
+          Yes
+      .radio
+        %label
+          = f.radio_button :felon, "0"
+          No
+
+  .row.small-gutter
+    .col-xs-12
+      = f.text_field :felon_explanation, :label => false, :placeholder => 'if yes, please list dates and details'
+
+  .row.small-gutter
+    .col-xs-12
+      = f.submit 'Next To Step 2', class: 'filled-in'

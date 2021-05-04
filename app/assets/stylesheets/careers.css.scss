@@ -1,0 +1,92 @@
+.career {
+  margin-bottom: 3em;
+}
+
+.career-description {
+  font-size: 0.8em;
+}
+
+#career-slides {
+  img {
+    padding: 1px;
+    padding-right: 0;
+    background: #fff;
+    max-width: 270px;
+    width: 100%;
+  }
+
+}
+
+#form-nav {
+  .h1 {
+    margin: 0 auto 15px;
+    display: block;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    border-width: 2px;
+    border-style: solid;
+    @include border-top-radius(50%);
+    @include border-bottom-radius(50%);
+    @include border-left-radius(50%);
+    @include border-right-radius(50%);
+    @media (max-width: 767px) {
+      font-size: 1em;
+      height: 40px;
+      width: 40px;
+      line-height: 40px;
+    }
+  }
+  .h6 {
+    color: $neutral;
+     @media (max-width: 767px) {
+      font-size: .45em;
+    }
+  }
+  .step:not(.active):not(.complete) {
+    &:hover {
+      .h6 { color: $neutral_dark; }
+      
+      .h1 {
+        color: $neutral_dark;
+        border-color: $neutral_dark;
+      }    
+    }
+
+    .h1 {
+      border-color: $neutral;
+      background: #FFF;
+      color: $neutral;
+    }
+  }
+  .active {
+    .h1 {
+      border-color: $primary;
+      background: $primary;
+      color: #fff;
+    }
+    .h6 {
+      color: $text_color;
+    }
+  }
+  .complete {
+    border-color: $neutral;
+    .h1 {
+      background: $neutral;
+      color: #fff;
+    }
+  }
+}
+
+#new_employment_application {
+  h2 {
+    text-align: center;
+  }
+  p {
+    margin: 8px 0 10px;
+  }
+}
+
+.edit_employment_application {
+  margin-bottom: 75px;
+}

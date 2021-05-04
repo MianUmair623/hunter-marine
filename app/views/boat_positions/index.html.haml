@@ -1,0 +1,51 @@
+- content_for :title, 'Boat Positions - Track Your Barge'
+- content_for :description, 'Up-to-date tracking information on each HFL barge.'
+
+#barge-tracker.bg-white.section
+  .container-fluid
+    .max-875.center-block.text-center
+      .row
+        .col-xs-12
+          %h2.h3
+            .h1 Track Your Barge
+
+          .sep.max-425.center-block.gray
+
+      - if @lastboat
+        .row
+          .col-xs-12
+            %h2.h4 Boat Positions Last Updated
+            - lastBoatCST = @lastboat.in_time_zone("Central Time (US & Canada)")
+            %p Time: #{lastBoatCST.strftime("%H00 CST")}  &nbsp;|&nbsp;  Date: #{lastBoatCST.strftime("%m-%d-%Y")}
+            %br
+            %br
+    .max-965.center-block
+      .row
+        .col-xs-12
+          %table.text-center.footable.table
+            %thead.bg-primary
+              %tr
+                %th Boat Name
+                %th Mile Marker
+                %th{ data:{ hide: 'phone'}} Direction
+                %th{ data:{ hide: 'phone'}} River
+                %th{ data:{ hide: 'phone'}} Date & Time
+            %tbody
+              - @boatpositions.each do |boat|
+                %tr{ :class => cycle('odd', 'even') }
+                  %td M/V #{boat.boatname}
+                  %td #{boat.mile_marker}
+                  %td #{boat.direction}
+                  %td #{boat.river}
+                  %td #{boat.updated_at.strftime("%m-%d-%Y %H:%M:%S %P")}
+
+      .row
+        .col-xs-4
+          - if @fuel_info
+            %table.fuel-info.table
+              %tr
+                %th Fuel Price:
+                %td.text-right= @fuel_info.price
+              %tr
+                %th Fuel Surcharge:
+                %td.text-right= @fuel_info.surcharge

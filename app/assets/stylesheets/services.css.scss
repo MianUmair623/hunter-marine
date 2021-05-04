@@ -1,0 +1,29 @@
+#terminals {
+  .content {
+    border: 1px solid $neutral;
+    border-top: none;
+    margin-top: -1px;
+  }
+  p.caption strong { text-transform: uppercase; display: block; margin-top: 10px; }
+}
+
+.service {
+  h3 {
+    margin: 20px 0;
+  }
+}
+
+#charters {
+  .block {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 40px;
+    background:#fff;
+  }
+
+  .content { padding: 0 10px 20px;}
+
+  p.caption {
+    text-transform: uppercase;
+  }
+}

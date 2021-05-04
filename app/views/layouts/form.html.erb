@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HunterMarine</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="container-two">
+    <div id="header">
+      <div id="logo"><a href="http://huntermarine.net/Home"><%= image_tag 'logo.png' %></a></div>
+      <div id="rheader">
+      </div>
+    </div>
+
+
+    <div id="navigation">
+      <div id="inavigation">
+        <div id="insidenav">
+          <a href="http://huntermarine.net/Home"><span style="width:83px">Home</span></a><div class="nsep">&nbsp;</div>
+          <div class="ddmenu"><a><span style="width:105px">Services</span></a>
+            <div class="ddm" style="margin-left: 89px;"><div class="ddtop"></div>
+            <div class="dditem"><a href="http://huntermarine.net/Services/HunterMarineFleet"><span>Hunter Marine Fleet</span></a><div style="clear: both;"></div></div>
+            <div class="dditem"><a href="http://huntermarine.net/Services/TowingAndHarbor"><span>Towing &amp; Harbor</span></a><div style="clear: both;"></div></div>
+            <div class="dditem"><a href="http://huntermarine.net/Services/Terminals"><span>Terminals</span></a><div style="clear: both;"></div></div>
+            <div class="dditem"><a href="http://huntermarine.net/Services/SandAndGravel"><span>Sand &amp; Gravel</span></a><div style="clear: both;"></div></div></div></div>
+            <div class="nsep">&nbsp;</div><div class="ddmenu"><a><span style="width:88px">About</span></a><div class="ddm" style="margin-left: 201px;">
+            <div class="ddtop"></div><div class="dditem"><a href="http://huntermarine.net/About/HunterMarine"><span>Hunter Marine</span></a><div style="clear: both;"></div></div>
+            <div class="dditem"><a href="http://huntermarine.net/About/CompanyNews"><span>Company News</span></a><div style="clear: both;"></div></div></div></div>
+            <div class="nsep">&nbsp;</div><div class="ddmenu"><a><span style="width:87px">Sales</span></a><div class="ddm" style="margin-left: 296px;">
+            <div class="ddtop"></div><div class="dditem"><a href="http://huntermarine.net/Sales/CharterInquiry"><span>Charter Inquiry</span></a><div style="clear: both;"></div></div>
+            <div class="dditem"><a href="http://huntermarine.net/Sales/TransportationInquiry"><span>Transportation Inquiry</span></a><div style="clear: both;"></div></div>
+            <div class="dditem"><a href="http://huntermarine.net/Sales/AggregatesInquiry"><span>Aggregates Inquiry</span></a><div style="clear: both;"></div></div></div></div>
+            <div class="nsep">&nbsp;</div><a href="/" class="cur"><span style="width:102px">Careers</span></a>
+            <div class="nsep">&nbsp;</div><a href="http://huntermarine.net/Links"><span style="width:83px">Links</span></a>
+            <div class="nsep">&nbsp;</div><a href="http://huntermarine.net/Contact"><span style="width:101px">Contact</span></a><div class="nsep">&nbsp;</div>
+            <div class="ddmenu"><a><span style="width:112px">Locations</span></a><div class="ddm" style="margin-left: 697px;">
+              <div class="ddtop"></div><div class="dditem"><a href="http://huntermarine.net/Locations/CorporateOffice"><span>Corporate Office</span></a>
+              <div style="clear: both;"></div></div><div class="dditem"><a href="http://huntermarine.net/Locations/VesselOperations"><span>Vessel Operations</span></a>
+              <div style="clear: both;"></div></div><div class="dditem"><a href="http://huntermarine.net/Locations/SandAndGravel"><span>Sand &amp; Gravel</span></a>
+              <div style="clear: both;"></div></div></div></div><div class="nsep">&nbsp;</div>
+              <a href="http://huntermarine.net/BoatPositions"><span style="width:144px">Boat Positions</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="main">
+      <div style='width: 525px; float: left;'>
+        <br />
+        <%= yield %>
+      </div>
+
+      <div id="side">
+        <div class="simg">
+          <div class="sdiv">
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

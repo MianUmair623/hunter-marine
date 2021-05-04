@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %title= yield(:title) + (" | " unless yield(:title).blank?).to_s + "Hines Furlong Line"
+    %meta{ :name =>"viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" }
+    %meta{ name: 'keywords', content: '' }
+    %meta{ name: 'description', content: yield(:description) }
+
+    = stylesheet_link_tag "application", media: "all"
+    = favicon_link_tag 'favicon3.png', rel: 'shortcut icon', type: 'image/png'
+
+    = javascript_include_tag "application"
+    = javascript_include_tag :modernizr
+    = csrf_meta_tags
+    = render partial: 'shared/google_analytics'
+
+  %body{ :class => "#{controller_name} #{action_name}" }
+    #nav-toggle.visible-xs
+      #spans
+        -(1..4).each do
+          %span
+
+    = render :partial => 'shared/mobile_nav'
+    = render :partial => 'shared/header'
+
+    #main-content
+      = yield
+
+    = render :partial => 'shared/footer'
+
+    .popout
+      .popout-box
+        .close-x &#x2715
+        %img.image
+

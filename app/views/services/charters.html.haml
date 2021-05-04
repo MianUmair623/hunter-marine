@@ -1,0 +1,27 @@
+- content_for :title, 'Boat Charters - Towboat Fleet'
+- content_for :description, 'The Hines Furlong Line fleet of towboats service customers on the Ohio, Lower and Upper Mississippi, Cumberland and Tennessee Rivers.'
+
+.bg-white.section
+  .container-fluid
+    .row.text-center
+      .col-xs-12
+        .max-725.center-block
+          %h2
+            %span Top of the line Transportation
+            .h1 HINES FURLONG LINE FLEET
+          %p The Hines Furlong Line fleet of towboats service customers on the Ohio, Lower and Upper Mississippi, Cumberland and Tennessee Rivers. Our dedicated staff of seasoned professional pilots, crews and support personnel maintains the highest standards expected by our clients. As our customer, you can trust the Hines Furlong Line fleet to provide you with the safest, most efficient and timely transportation available in today's inland waterway industry.
+
+#charters.bg-neutral-light.section
+  .container-fluid
+    .row
+      - @charters.each do |boat|
+        .col-xs-6.col-sm-4
+          %a.block.text-center.popup-image-link{ href: image_path("boats/large/#{boat[2]}")}
+            = image_tag("boats/#{boat[2]}", class: 'img-responsive')
+            .content
+              %br
+              %h3.h4= boat[0]
+              %p.caption
+                - boat[1].split('^').each do |line|
+                  = line
+                  %br

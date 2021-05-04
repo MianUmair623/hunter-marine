@@ -1,0 +1,59 @@
+.boat_positions, .directory {
+  
+  table {
+    width: 100%;
+  }
+  
+  table th {
+    font-family: 'montserratbold';
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  table th, table td {
+    padding: 12px 6px;
+
+    &:first-child {
+      padding-left:30px;
+    }
+  }
+
+  tbody td { color: $neutral_dark; }
+  
+  tbody tr.even { background: $neutral_light }
+  tbody tr.odd { background: #FFF }
+
+  table {
+    tr th:first-child {
+      text-align:left;
+    }
+    tr td:first-child {
+      text-align:left;
+    }
+  }
+}
+
+@media (min-width: 0px)  {
+  .boat_positions, .directory {
+    table th, table td {
+
+      &:first-child {
+        padding-left:12px;
+      }
+    }
+  }
+}
+@media (min-width: 768px)  {
+  .boat_positions, .directory {
+    table th, table td {
+
+      &:first-child {
+        padding-left:30px;
+      }
+    }
+  }
+}
+
+table.fuel-info {
+  margin-top: 30px;
+}

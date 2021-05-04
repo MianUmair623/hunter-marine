@@ -1,0 +1,154 @@
+.container-fluid
+  .row
+    .col-xs-12
+      %h1.h3 Colors
+      - @colors = ['primary','secondary','tertiary','neutral']
+      - @colors.each do |color|
+        .row.text-center.no-gutter
+          .col-sm-4.col-md-2
+            %div{ :class => "styleguide-color bg-#{color}" }
+              = color
+          .col-sm-4.col-md-2
+            %div{ :class => "styleguide-color bg-#{color}-dark" }
+              #{color}-dark
+          .col-sm-4.col-md-2
+            %div{ :class => "styleguide-color bg-#{color}-light" }
+              #{color}-light
+          .col-sm-4.col-md-2.pos-rel
+            %div{ :class => "styleguide-color bg-#{color}-trans pos-abs" }
+              #{color}-trans
+          .col-sm-4.col-md-2
+            %div{ :class => "styleguide-color bg-#{color}-dark-trans" }
+              #{color}-dark-trans
+          .col-sm-4.col-md-2
+            %div{ :class => "styleguide-color bg-#{color}-light-trans" }
+              #{color}-light-trans
+
+.container-fluid
+  .row
+    .col-xs-12
+      %h1.h3 Headings
+    .col-xs-12
+      %h1.h1
+        %span.h4 Welcome to
+        Hunter Marine
+
+        %span
+          test
+  .row
+    - (1..4).each do |i|
+      - if i > 1
+        - alt = "alt#{i}"
+      - else
+        - alt = ""
+
+      .col-xs-6.col-sm-3
+        %h1{ :class => "#{alt}" } Heading 1
+        %h2{ :class => "#{alt}" } Heading 2
+        %h3{ :class => "#{alt}" } Heading 3
+        %h4{ :class => "#{alt}" } Heading 4
+        %h5{ :class => "#{alt}" } Heading 5
+        %h6{ :class => "#{alt}" } Heading 6
+
+
+
+.container-fluid
+  .row
+    .col-xs-12
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nulla id ipsum aliquet ornare. Curabitur fermentum augue ut libero condimentum, nec rhoncus turpis auctor. Nunc leo sem, ornare vestibulum vestibulum ut, sagittis et lacus. Aliquam lectus leo, luctus in aliquet ac, ultricies id nisl. In eget porta justo. Mauris vel nibh ut erat viverra cursus eget non tortor. Nullam tincidunt lobortis nisl non blandit. Phasellus tincidunt dignissim viverra. Suspendisse dapibus eu mauris sit amet rutrum. Fusce pulvinar sit amet dolor vel sollicitudin. Morbi semper porta lorem, et volutpat nibh. Suspendisse condimentum diam convallis dapibus tristique. Fusce lobortis nisl vitae tristique vestibulum. 
+
+.bg-primary
+  .container-fluid.max-500.center-block
+    .row.small-gutter
+      .col-xs-12
+        %form
+          .row.no-gutter
+            .col-xs-9
+              %input{ :type => 'textfield', :placeholder => 'email' }
+            .col-xs-3
+              %button{ :type => 'submit' } Submit
+        %form
+          .row.small-gutter
+            .col-sm-4
+              %input{ :type => 'textfield', :placeholder => 'First' }
+            .col-sm-4
+              %input{ :type => 'textfield', :placeholder => 'Middle' }
+            .col-sm-4
+              %input{ :type => 'textfield', :placeholder => 'Last' }
+          .row.small-gutter
+            .col-sm-6
+              %select
+                - (1..6).each do |i|
+                  %option Option #{i}
+            .col-sm-6
+              %select
+                - (1..6).each do |i|
+                  %option Option #{i}
+          .row.small-gutter
+            .col-xs-12
+              %textarea{ :placeholder => "Description" }
+
+          .row.small-gutter
+            .col-xs-6
+              .max-150
+                %button{ :type => 'submit' } Submit
+            .col-xs-6
+              .max-150
+                %button{ :type => 'submit', :class => 'trans' } Submit
+
+
+
+.container-fluid.max-500.center-block
+  .row.small-gutter
+    .col-xs-12
+      %form
+        .row.no-gutter
+          .col-xs-9
+            %input{ :type => 'textfield', :placeholder => 'email' }
+          .col-xs-3
+            %button{ :type => 'submit' } Submit
+      %form
+        .row.small-gutter
+          .col-sm-4
+            %input{ :type => 'textfield', :placeholder => 'First' }
+          .col-sm-4
+            %input{ :type => 'textfield', :placeholder => 'Middle' }
+          .col-sm-4
+            %input{ :type => 'textfield', :placeholder => 'Last' }
+        .row.small-gutter
+          .col-sm-6
+            %select
+              - (1..6).each do |i|
+                %option Option #{i}
+          .col-sm-6
+            %select
+              - (1..6).each do |i|
+                %option Option #{i}
+        .row.small-gutter
+          .col-xs-12
+            %textarea{ :placeholder => "Description" }
+
+        .row.small-gutter
+          .col-xs-6
+            .max-150
+              %button{ :type => 'submit' } Submit
+          .col-xs-6
+            .max-150
+              %button{ :type => 'submit', :class => 'trans' } Submit
+
+
+- @alerts = ['success','info','warning','danger']
+- @alerts.each do |alert|
+  .container-fluid
+    .row
+      .col-xs-12
+        .alert{ :class => "alert-#{alert}" }
+          %button.close{"data-dismiss" => "alert", :type => "button"} &#215;
+          %strong Alert!
+          =alert
+
+
+.container-fluid.max-430.center-block
+  .row
+    .col-xs-12      
+      %hr

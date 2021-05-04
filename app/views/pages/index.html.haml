@@ -1,0 +1,44 @@
+- content_for :title, 'Inland River and Marine Transportation'
+- content_for :description, 'Hines Furlong Line services the inland waterways, ranging from tank barges to towboats, consulting to equipment management, and construction oversight to financial support.'
+
+= image_tag 'Ron-Hunter-hero.jpg', class: 'img-responsive'
+-#home-slideshow
+  %i.arrow-left.fa.fa-angle-left.noselect
+  %i.arrow-right.fa.fa-angle-right.noselect
+
+  .swiper-container
+    .swiper-wrapper
+      -(2..4).each_with_index do |index|
+        .swiper-slide
+          .slide-text.vert-center
+            .content
+              .max-850.center-block
+                - if index == 2
+                  %h1.large Hines Furlong Line
+                  %h2.h3.alt.white Professional marine transportation.
+          = image_tag "home_slides/slide-#{index}.jpg", class: 'img-responsive'
+  .pagination.dots
+
+#checker
+  .row.no-gutter
+    .col-sm-6.bg-white
+      .content.bg-white
+        %h4.text-center
+          .h1 HINES FURLONG LINE
+
+        %p Hines Furlong Line is a company with multifaceted interests within the inland barge industry. Our varied interests include a diverse fleet of inland barges that are made available for lease and a fleet of owned and operated inland towboats that push both dry and liquid barges. We take pride in our family of professional mariners, skilled shore-side administrators, and our fleet of high caliber vessels. Our people and equipment are all centered around an unwavering attention to detail, an ever-present focus for care of the environment and protection of life and limb, and exceeding customer expectations.
+
+    .col-sm-6.bg-primary
+      .content.bg-primary
+        %h4.text-center
+          .h1.white OUR SERVICES
+
+        %p The Hines Furlong Line fleet of towboats service customers on the Ohio, Lower and Upper Mississippi, Illinois, Cumberland and Tennessee Rivers. Our dedicated staff of seasoned professional pilots, crews and support personnel maintains the highest standards expected by our clients. As our customer, you can trust the Hines Furlong Line fleet to provide you with the safest, most efficient and timely transportation available in today's inland waterway industry.
+
+#services.bg-neutral-light.section
+  .container-fluid
+    .row
+      .col-xs-12
+        %br
+        %br
+        = link_to "Contact Us", contact_path, :class => 'button max-275 center-block'
