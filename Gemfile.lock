@@ -312,6 +312,8 @@ GEM
       ffi (~> 1.0)
     rbtree3 (0.6.0)
     redis (4.2.5)
+    redis-namespace (1.8.1)
+      redis (>= 3.0.4)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
@@ -419,6 +421,7 @@ DEPENDENCIES
   rails (~> 4.2.0)
   rails_12factor
   recaptcha!
+  redis-namespace
   rufus-scheduler
   sass-rails (~> 5.0)
   sidekiq

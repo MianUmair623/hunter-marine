@@ -34,7 +34,7 @@ gem 'sinatra', :require => nil
 gem 'sidekiq'
 gem "sidekiq-cron"
 gem 'rufus-scheduler' #have to specify this because sidekiq crong doesnt work with 3.5
-# gem 'redis-namespace'
+gem 'redis-namespace'
 
 group :development do
   gem "quiet_assets"
