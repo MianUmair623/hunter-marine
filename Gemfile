@@ -42,6 +42,7 @@ group :development do
   gem 'guard-livereload',        :require => false,          group: :doc
   gem 'rack-livereload',          group: :doc
   gem 'capistrano'
+  gem 'web-console', '~> 2.0'
   # gem 'capistrano-hitcents', require: false, git: 'git@bitbucket.org:hitcents-webdev/capistrano-hitcents', branch: 'v3'
   gem 'capistrano-sidekiq', require: false
 end
@@ -53,4 +54,3 @@ group :test, :development do
   #gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
-

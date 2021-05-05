@@ -19,8 +19,8 @@ development: &defaults
 #   username: hunter_marine_b
 #   password: b4kfx947#
 
-# production:
-#   <<: *defaults
-#   database: hunter_marine_production
-#   username: hunter_marine_p
-#   password: b4JLx947#
+production:
+  <<: *defaults
+  database: hunter
+  username: sammy
+  password: Password123456!
