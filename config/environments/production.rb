@@ -88,5 +88,4 @@ HunterMarine::Application.configure do
     "Caseyville - Sand & Gravel" => "Rstone@huntermarine.net",
     "Clarksville - Barge Fleet" => "ben@winnmaterials.com"
   }
-  config.action_cable.allowed_request_origins = ['https://https://hunter-marine.herokuapp.com']
 end

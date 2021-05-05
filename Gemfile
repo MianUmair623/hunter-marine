@@ -14,6 +14,7 @@ gem "font-awesome-rails"
 gem 'sprockets-rails'
 gem 'bourbon'
 gem 'active_link_to'
+gem 'airbrake'
 gem 'holder_rails'
 gem 'uglifier'
 gem "ckeditor", '4.2.4'
@@ -33,7 +34,7 @@ gem 'sinatra', :require => nil
 gem 'sidekiq'
 gem "sidekiq-cron"
 gem 'rufus-scheduler' #have to specify this because sidekiq crong doesnt work with 3.5
-gem 'redis-namespace'
+# gem 'redis-namespace'
 
 group :development do
   gem "quiet_assets"
